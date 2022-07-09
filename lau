@@ -1,1 +1,44 @@
-print
+    local UILib = loadstring(game:HttpGet("https://raw.githubusercontent.com/destylol/UILib/itachi/source.lua"))()
+    local Window = UILib:Init({
+        SavePosition = true -- true/false saves gui position on new execute
+    })
+    
+    
+    local Home = Window:Tab("Home")
+    local Main = Window:Tab("Main")
+    local Misc = Window:Tab("Teleports")
+    
+    local HomeSection = Home:Section("Credits")
+    local MainSection = Main:Section("Main Utilities")
+    local MiscSection = Misc:Section("Teleports, listed below.")
+
+    HomeSection:NewLabel({
+        Title = "Provided by Phantom Software"
+    })
+    
+    
+    --toggle
+    MainSection:NewToggle({
+        Title = "ya mam",
+        Callback = function()
+         print("hi")
+        end,
+        Default = false   
+ 
+    })
+
+    MiscSection:NewButton({
+        Title = "Admin Base",
+        Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-872.453674, -32.6421318, -532.476379, 0.999682248, -1.36019978e-08, 0.0252073351, 1.33811247e-08, 1, 8.93094043e-09, -0.0252073351, -8.59080007e-09, 0.999682248)
+        end,
+        Default = false
+    })
+
+    MiscSection:NewButton({
+        Title = "Club",
+        Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264.434479, 0.0355005264, -430.854736, -0.999828756, 9.58909574e-09, -0.0185054261, 9.92017934e-09, 1, -1.77993904e-08, 0.0185054261, -1.79799198e-08, -0.999828756)
+        end,
+        Default = false
+    })
